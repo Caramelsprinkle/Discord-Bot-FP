@@ -1,25 +1,43 @@
 import discord
-import logging
-from clients.custom_bot_client import CustomBotClient
-from cogs.pingpong import PingPong
+from discord.ext import commands
+# import asyncio
+# import os
+# import logging
+# from clients.custom_bot_client import CustomBotClient
+# from cogs.PingPong import PingPong
 from config import TOKEN
 
-def main():
-    
-    intents = discord.Intents.default()
-    intents.message_content = True
-    
-    bot = CustomBotClient(
-        command_prefix=">>>",
-        intents=intents
-        )
+intents = discord.Intents.default()
+intents.message_content = True
+intents.members = True
 
-    bot.add_cog(PingPong(bot))
-    
-    bot.run(TOKEN)
 
-    handler = logging.FileHandler(filename="discord.log", encoding="utf-8", mode="w")
-    bot.run(TOKEN, log_handler=handler, log_level=logging.DEBUG)
 
-if __name__ == "__main__":
-    main()
+# def main():
+
+#     bot = CustomBotClient(
+#         command_prefix="$",
+#         intents=intents
+#         )
+
+#     bot.add_cog(PingPong(bot))
+
+#     bot.run(TOKEN)
+
+# class CustomClient(discord.Client):
+#     async def on_ready(self):
+#         print(f"{self.user} is ready!")
+
+#     async def on_message(self, msg):
+#         msgChannel = msg.channel
+#         msgContent = msg.content
+#         msgAuthor = msg.author
+
+#         if msgAuthor == self.user:
+#             return
+
+#         if msgContent == "!ping":
+#             await msgChannel.send(f"Pong!\n{round(self.latency * 1000)}ms")
+
+# if __name__ == "__main__":
+#     main()
