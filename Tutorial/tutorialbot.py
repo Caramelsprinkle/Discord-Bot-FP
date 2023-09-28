@@ -21,7 +21,6 @@ clientStatus = cycle(["in 30",
                       "Error!!!",
                       "rebooting.."])
 
-@bot.event
 # await cannot be used without async, but async can be used without await
 async def on_ready(): #starts when the bot starts running
     print("Success: Bot is ready to use!")
@@ -43,6 +42,7 @@ async def load():
             
 async def main():
     async with bot:
+        await on_ready()
         await load()
         await bot.start(TOKEN)
         
