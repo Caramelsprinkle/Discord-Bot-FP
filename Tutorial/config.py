@@ -1,1 +1,2 @@
 TOKEN = "MTE1MzYyMDA4MDI5NTQyNDAzMA.GLVl4w.1ilkKC4xmkkj0IrKZpJv7lzMtL7yfM3P3PLfAg"
+#TOKEN won't work since the bot's token changes when Discord detects (somehow, I don't know) that it has been uploaded to GitHub
